@@ -36,7 +36,7 @@ At its most basic, vertical privilege escalation arises where an application doe
 
 For example, a website might host sensitive functionality at the following URL:
 ```
- https://exapmle.com/admin
+ https://example.com/admin
  ```
 In some cases, the sensitive functionality URL might be disclosed in other locations, such as the `robots.txt` file: 
 ```
@@ -65,7 +65,11 @@ if (isAdmin) {
 ```
 This script adds a link to the user's UI if they are an admin user. However, the script containing the URL is visible to all users regardless of their role. 
 
- 
- 
-
+* **Parameter-Based Access Control Methods**
+Some applications determine the user's access rights or role at login, and then store this information in a user-controllable location, such as a hidden field, cookie, or preset query string parameter. After this application makes access control decisions based on the submitted value. For example
+```
+https://example.com/login/home.jsp?admin=true
+https://example-website.com/login/home.jsp?role=1
+```
+This approach is basically insecure because a user can simply modify the value and gain access to functionality to which they are not authorized, such as administrative functions.
 
