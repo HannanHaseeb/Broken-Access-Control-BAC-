@@ -74,3 +74,4 @@ https://example-website.com/login/home.jsp?role=1
 ```
 This approach is basically insecure because a user can simply modify the value and gain access to functionality to which they are not authorized, such as administrative functions.
 
+An alterantive attack can arise in relation to the HTTP method used in the request. If an attacker can use the GET (or another) method to perform actions on a restricted URL, then they can be bypass access control.
