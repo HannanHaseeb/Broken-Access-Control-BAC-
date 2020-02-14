@@ -28,7 +28,7 @@ Context-dependent access controls prevent a user performing actions in the wrong
 ## What is broken access control vulnerabilities?
 Broken access control vulnerabilities exist when a user access some resource or perform some action that they are not supposed to be able to access. 
 
-* **Veritcal Privilage Escalation**
+## Veritcal Privilage Escalation
 
 If a user can gain access to functionality that they are not allowed to access then this is vertical privilege escalation. For example, if a standerd user can gain access to an admin page where they can delete user accounts, then this is vertical privilege escalation.
 
