@@ -42,4 +42,30 @@ In some cases, the sensitive functionality URL might be disclosed in other locat
 ```
  https://example.com/robots.txt
  ```
+Even if the URL isn't disclosed anywhere, an attacker may be able to use a wordlist to brute-force the location of the sensitive functionality.
+
+In some cases, sensitive functionality is not firmly protected but is invisible by giving it a less predictable URL. Merely hiding sensitive functionality does not provide effective access control since users might still discover the obfuscated URL in various ways. 
+
+For example, consider an application that hosts sensitive functions at the following URL:
+```
+ https://example.com/administrator-panel-yb556 
+ ```
+This might not be directly guessable by an attacker. However, the application might still leak the URL to users. For example, the URL might be disclosed in JavaScript that constructs the user interface based on the user's role:
+```
+<script>
+var isAdmin = false;
+if (isAdmin) {
+  ...
+  var adminPanelTag = document.createElement('a');
+  adminPanelTag.setAttribute('https://example.com/administrator-panel-yb556');
+  adminPanelTag.innerText = 'Admin panel';
+  ...
+}
+</script> 
+```
+This script adds a link to the user's UI if they are an admin user. However, the script containing the URL is visible to all users regardless of their role. 
+
+ 
+ 
+
 
