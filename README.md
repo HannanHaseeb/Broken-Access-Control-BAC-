@@ -70,8 +70,23 @@ This script adds a link to the user's UI if they are an admin user. However, the
 Some applications determine the user's access rights or role at login, and then store this information in a user-controllable location, such as a hidden field, cookie, or preset query string parameter. After this application makes access control decisions based on the submitted value. For example
 ```
 https://example.com/login/home.jsp?admin=true
-https://example-website.com/login/home.jsp?role=1
+https://example.com/login/home.jsp?role=1
 ```
 This approach is basically insecure because a user can simply modify the value and gain access to functionality to which they are not authorized, such as administrative functions.
 
 An alterantive attack can arise in relation to the HTTP method used in the request. If an attacker can use the GET (or another) method to perform actions on a restricted URL, then they can be bypass access control.
+
+## Horizontal Privilege Escalation
+
+Horizontal privilege escalation arises when a user is able to gain access to resources belonging to another user, instead of their own resources of that type this is also known as IDOR.For example, a user might ordinarily access their own account page using a URL like the following:
+```
+https://example.com/myaccount?id=123
+```
+Now, if an attacker modifies the id parameter value to that of another user, then the attacker might gain access to another user's account page, with associated data and functions.
+
+
+
+
+
+
+
