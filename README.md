@@ -78,7 +78,7 @@ An alterantive attack can arise in relation to the HTTP method used in the reque
 
 ## Horizontal Privilege Escalation
 
-Horizontal privilege escalation arises when a user is able to gain access to resources belonging to another user, instead of their own resources of that type this is also known as IDOR.For example, a user might ordinarily access their own account page using a URL like the following:
+Horizontal privilege escalation arises when a user is able to gain access to resources belonging to another user, instead of their own resources of that type this is also known as IDOR. For example, a user might ordinarily access their own account page using a URL like the following:
 ```
 https://example.com/myaccount?id=123
 ```
