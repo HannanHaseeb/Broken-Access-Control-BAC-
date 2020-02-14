@@ -88,6 +88,15 @@ In some applications, the exploitable parameter does not have a guessable value.
 
 In some cases, an application detect the user is not permitted to access the resource, and returns a redirect to the login page. However, the response containing the redirect might still include some sensitive data belonging to the targeted user, so the attack is still successful.
 
+## Horizontal TO Vertical Privielge Escalation
+
+Often, a horizontal privilege escalation attack can be turned into a vertical privilege escalation, by compromising a more privileged user. For example, a horizontal escalation might allow an attacker to reset or capture the password belonging to another user. If the attacker targets an administrative user and compromises their account, then they can gain administrative access and so perform vertical privilege escalation.
+
+For example, an attacker might be able to gain access to another user's account page using the parameter tampering technique:
+```
+https://example.com/myaccount?id=456
+```
+If the target user is an application administrator, then the attacker will gain access to an administrative account page.
 
 
 
